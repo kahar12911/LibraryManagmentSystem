@@ -17,7 +17,8 @@ public class User {
     private Integer userID;
     private String name;
 
-    @OneToMany
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<BookCopy> borrowedBooks;
+
 }
 
